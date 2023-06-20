@@ -13,7 +13,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.scale
-import androidx.compose.ui.input.pointer.consumeAllChanges
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -23,7 +22,8 @@ fun RectangleComposable() {
     var offsetX by remember { mutableStateOf(0f) }
     var offsetY by remember { mutableStateOf(0f) }
 
-    Canvas(modifier = Modifier.fillMaxSize()
+    Canvas(modifier = Modifier
+        .fillMaxSize()
         .pointerInput(Unit) {
             detectDragGestures { change, dragAmount ->
                 change.consume()
@@ -31,10 +31,10 @@ fun RectangleComposable() {
                 offsetY += dragAmount.y
             }
         }
-    ){
+    ) {
         val canvasQuadrantSize = size / 2F
         drawRect(
-            topLeft = Offset(offsetX,offsetY),
+            topLeft = Offset(offsetX, offsetY),
             color = Color.Blue,
             size = canvasQuadrantSize
         )
@@ -42,7 +42,7 @@ fun RectangleComposable() {
 }
 
 @Composable
-fun DrawCircle(){
+fun DrawCircle() {
     Canvas(modifier = Modifier.fillMaxSize()) {
         scale(scaleX = 5f, scaleY = 5f) {
             drawCircle(Color.Blue, radius = 20.dp.toPx())
@@ -51,7 +51,7 @@ fun DrawCircle(){
 }
 
 @Composable
-fun DrawLine(){
+fun DrawLine() {
     Canvas(modifier = Modifier.fillMaxSize()) {
         // Fetching width and height for
         // setting start x and end y
@@ -60,17 +60,18 @@ fun DrawLine(){
 
         // drawing a line between start(x,y) and end(x,y)
         drawLine(
-            start = Offset(x = canvasWidth/2, y = 0f),
-            end = Offset(x = canvasWidth/2, y = canvasHeight),
+            start = Offset(x = canvasWidth / 2, y = canvasHeight/2),
+            end = Offset(x = canvasWidth / 2, y = canvasHeight),
             color = Color.Red,
             strokeWidth = 5F
         )
 
     }
 }
+
 @Preview
 @Composable
-fun Preview(){
+fun Preview() {
     Surface {
         RectangleComposable()
     }
