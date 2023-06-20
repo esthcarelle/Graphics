@@ -26,7 +26,7 @@ fun RectangleComposable() {
     Canvas(modifier = Modifier.fillMaxSize()
         .pointerInput(Unit) {
             detectDragGestures { change, dragAmount ->
-                change.consumeAllChanges()
+                change.consume()
                 offsetX += dragAmount.x
                 offsetY += dragAmount.y
             }
@@ -74,5 +74,4 @@ fun Preview(){
     Surface {
         RectangleComposable()
     }
-
 }
