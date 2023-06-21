@@ -32,7 +32,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
 //                    AndroidView(modifier = Modifier.size(300.dp),factory = { drawView })
-                    RectangleComposable()
+                    FacebookIcon()
                 }
             }
         }
