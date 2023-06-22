@@ -1,7 +1,6 @@
-package com.mine.graphics
+package com.mine.graphics.ui.components
 
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -21,7 +20,6 @@ fun GoogleIcon() {
     Canvas(
         modifier = Modifier
             .size(100.dp)
-            .padding(20.dp)
     ) {
         val width = this.size.width
         val height = this.size.height
@@ -43,13 +41,13 @@ fun GoogleIcon() {
 
         drawRect(
             color = Color(0xFF4384f3),
-            size = Size(width * .57f, 20f),
+            size = Size(width * .56f, 20f),
             topLeft = Offset(width * .55f, height * .45f)
         )
 
         drawRect(
             color = Color(0xFF4384f3),
-            size = Size(width * .45f, 20f),
+            size = Size(width * .40f, 20f),
             topLeft = Offset(width * .55f, height * .54f)
         )
 

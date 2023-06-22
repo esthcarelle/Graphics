@@ -1,4 +1,4 @@
-package com.mine.graphics
+package com.mine.graphics.ui.components
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.size

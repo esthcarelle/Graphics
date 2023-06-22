@@ -1,38 +1,61 @@
 package com.mine.graphics
 
-import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.RequiresApi
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.size
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.viewinterop.AndroidView
+import com.mine.graphics.ui.components.FacebookIcon
+import com.mine.graphics.ui.components.GoogleIcon
+import com.mine.graphics.ui.components.InstagramIcon
+import com.mine.graphics.ui.components.YoutubeIcon
 import com.mine.graphics.ui.theme.GraphicsTheme
 
 class MainActivity : ComponentActivity() {
-    lateinit var drawView: DrawView
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        drawView =  DrawView(this)
-//        drawView.setBackgroundColor(Color.BLACK)
-//        setContentView(drawView)
         setContent {
             GraphicsTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(Color.Black),
+                    verticalArrangement = Arrangement.Top
                 ) {
-//                    AndroidView(modifier = Modifier.size(300.dp),factory = { drawView })
-                    FacebookIcon()
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 16.dp),
+                        horizontalArrangement = Arrangement.SpaceEvenly
+                    ) {
+                        GoogleIcon()
+                        FacebookIcon()
+                        InstagramIcon()
+                    }
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 16.dp),
+                        horizontalArrangement = Arrangement.SpaceEvenly
+                    ) {
+                        YoutubeIcon()
+                    }
                 }
             }
         }

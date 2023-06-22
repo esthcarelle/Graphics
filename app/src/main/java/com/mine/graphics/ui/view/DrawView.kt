@@ -1,4 +1,4 @@
-package com.mine.graphics
+package com.mine.graphics.ui.view
 
 import android.content.Context
 import android.graphics.Canvas

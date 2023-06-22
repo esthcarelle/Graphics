@@ -1,11 +1,9 @@
-package com.mine.graphics
+package com.mine.graphics.ui.components
 
 import android.graphics.Paint
-import android.graphics.Typeface
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -17,6 +15,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.content.res.ResourcesCompat
+import com.mine.graphics.R
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
@@ -30,7 +29,6 @@ fun FacebookIcon() {
     Canvas(
         modifier = Modifier
             .size(100.dp)
-            .padding(16.dp)
     ) {
         drawRoundRect(
             color = Color(0xFF1776d1),
