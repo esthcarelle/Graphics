@@ -2,6 +2,8 @@ package com.mine.graphics
 
 import android.graphics.Paint
 import android.graphics.Typeface
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -14,15 +16,16 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.core.content.res.ResourcesCompat
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun FacebookIcon() {
-    val assetManager = LocalContext.current.assets
     val paint = Paint().apply {
         textAlign = Paint.Align.CENTER
         textSize = 200f
         color = Color.White.toArgb()
-        typeface = Typeface.createFromAsset(assetManager, "facebolf.OTF")
+        typeface = ResourcesCompat.getFont(LocalContext.current, R.font.facebolf)
     }
     Canvas(
         modifier = Modifier
@@ -37,6 +40,7 @@ fun FacebookIcon() {
     }
 }
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 @Preview
 fun FacebookPreview(){
