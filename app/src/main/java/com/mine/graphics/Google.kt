@@ -26,20 +26,20 @@ fun GoogleIcon() {
         val width = this.size.width
         val height = this.size.height
 
-//        val path = Path()
-//        path.moveTo(width / 2, height / 2)
-//        path.lineTo(width + 5, height * .05f)
-//        path.lineTo(width + 20, height * 0.45f)
+        val path = Path()
+        path.moveTo(width / 2, height / 2)
+        path.lineTo(width + 5, height * .05f)
+        path.lineTo(width + 20, height * 0.45f)
 
 
-//        clipPath(path = path, clipOp = ClipOp.Difference) {
-//            drawCircle(
-//                color = Color.Transparent,
-//                radius = 100f,
-//                style = Stroke(40f, cap = StrokeCap.Round)
-//            )
-//            drawPath(path = path, color = Color.Transparent)
-//        }
+        clipPath(path = path, clipOp = ClipOp.Difference) {
+            drawCircle(
+                color = Color.Transparent,
+                radius = 100f,
+                style = Stroke(40f, cap = StrokeCap.Round)
+            )
+            drawPath(path = path, color = Color.Transparent)
+        }
 
         drawRect(
             color = Color(0xFF4384f3),
