@@ -21,6 +21,8 @@ import androidx.compose.ui.unit.dp
 import com.mine.graphics.ui.components.FacebookIcon
 import com.mine.graphics.ui.components.GoogleIcon
 import com.mine.graphics.ui.components.InstagramIcon
+import com.mine.graphics.ui.components.MicrosoftIcon
+import com.mine.graphics.ui.components.SpotifyIcon
 import com.mine.graphics.ui.components.YoutubeIcon
 import com.mine.graphics.ui.theme.GraphicsTheme
 
@@ -55,6 +57,8 @@ class MainActivity : ComponentActivity() {
                         horizontalArrangement = Arrangement.SpaceEvenly
                     ) {
                         YoutubeIcon()
+                        SpotifyIcon()
+                        MicrosoftIcon()
                     }
                 }
             }
