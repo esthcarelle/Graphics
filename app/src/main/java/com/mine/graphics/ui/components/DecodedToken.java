@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 
-import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,10 +22,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class DecodedToken {
-
-    public String sub;
-    public String name;
-    public Boolean admin;
 
     public static String getDecoded(String encodedToken) throws UnsupportedEncodingException, UnsupportedEncodingException {
         String[] parts = encodedToken.split("\\.", 0);
@@ -80,8 +75,6 @@ public class DecodedToken {
                 result.append(obj.getString("foo"));
             }
 
-            // Print the concatenated result
-            System.out.println("Concatenated 'foo' values: " + result.toString());
 
 
         }catch (JSONException e){
