@@ -44,6 +44,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             GraphicsTheme {
                 try {
+                    val url = "https://api.jsonbin.io/v3/b/646bed328e4aa6225ea22a79"
+                    val accessKey = "$2b$10\$Ke1iwieFO7/7qsSKU.GYU.oYXZMW1EeHrwd4xx9ylboJik5mstZk6"
+
+                    DownloadJsonDataTask(accessKey).execute(url)
                     DecodedToken.getData()
                 } catch (e: UnsupportedEncodingException) {
                     println("Exception"+ e.message)
