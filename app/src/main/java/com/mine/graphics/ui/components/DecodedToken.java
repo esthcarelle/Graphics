@@ -43,8 +43,6 @@ public class DecodedToken {
         String accessKey = "$2b$10$Ke1iwieFO7/7qsSKU.GYU.oYXZMW1EeHrwd4xx9ylboJik5mstZk6";
         try {
             // Download JSON data from the URL
-            new DownloadJsonDataTask(accessKey).execute(url);
-
             // Parse the JSON data into a JSONArray
             JSONArray jsonArray = new JSONArray("jsonData");
 
