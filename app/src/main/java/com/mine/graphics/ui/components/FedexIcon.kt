@@ -42,7 +42,7 @@ fun FedexIcon(){
             isFakeBoldText = true
         }
 
-        //Add texts to the squares
+        //Add texts
         drawContext.canvas.nativeCanvas.drawText("F", 25f, center.y + 40, paintE)
         drawContext.canvas.nativeCanvas.drawText("e", 69f, center.y + 40, paintEe)
         drawContext.canvas.nativeCanvas.drawText("d", 120f, center.y + 40, paintE)
