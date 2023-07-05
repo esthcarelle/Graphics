@@ -21,6 +21,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.mine.graphics.ui.components.DecodedToken
 import com.mine.graphics.ui.components.FacebookIcon
+import com.mine.graphics.ui.components.FedexIcon
 import com.mine.graphics.ui.components.GoogleIcon
 import com.mine.graphics.ui.components.InstagramIcon
 import com.mine.graphics.ui.components.MicrosoftIcon
@@ -53,7 +54,6 @@ class MainActivity : ComponentActivity() {
                     println("Exception"+ e.message)
                     throw RuntimeException(e)
                 }
-                println("hey hey")
                 // A surface container using the 'background' color from the theme
                 Column(
                     modifier = Modifier
@@ -80,6 +80,14 @@ class MainActivity : ComponentActivity() {
                         YoutubeIcon()
                         SpotifyIcon()
                         MicrosoftIcon()
+                    }
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 16.dp),
+                        horizontalArrangement = Arrangement.SpaceEvenly
+                    ) {
+                        FedexIcon()
                     }
                 }
             }
